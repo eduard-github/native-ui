@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Button from './ui/button';
+import OTPInput from './ui/otp-input';
 import Typography from './ui/typography';
 
 function App(): JSX.Element {
