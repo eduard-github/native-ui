@@ -1,14 +1,26 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import Button from './ui/button';
+import Typography from './ui/typography';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>App</Text>
+    <SafeAreaView style={styles.container}>
+      <Typography size="xl" weight="extrabold" transform="uppercase">
+        App
+      </Typography>
+      <Button variant="outlined" color="blue">
+        <Typography color="blue">Application Button</Typography>
+      </Button>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'gray',
+  },
+});
 
 export default App;
