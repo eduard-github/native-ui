@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  Pressable,
-  PressableProps,
-  Text,
-  TextStyle,
-  View,
-  ViewStyle,
-  Image,
-} from 'react-native';
+import {Pressable, PressableProps, ViewStyle} from 'react-native';
 
 interface ButtonProps extends PressableProps {
-  children: React.ReactNode,
+  children: React.ReactNode;
   color?: string;
   buttonStyle?: ViewStyle;
   leftIcon?: any;
@@ -27,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   rightIcon,
   variant,
   color = '#000',
+  onPress,
   ...rest
 }: ButtonProps) => {
   const getButtonStyle = (): ViewStyle => {
@@ -72,11 +65,12 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <Pressable
+      onPress={onPress}
       style={({pressed}) => [getButtonStyle(), getPressableStyle(pressed)]}
       {...rest}>
-      {/* {leftIcon && <Image source={leftIcon} style={defaultIconStyle} />} */}
+      {leftIcon && {leftIcon}}
       {children}
-      {/* {rightIcon && <Image source={rightIcon} style={defaultIconStyle} />} */}
+      {rightIcon && {rightIcon}}
     </Pressable>
   );
 };
@@ -85,13 +79,6 @@ const defaultButtonStyle: ViewStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'row',
-};
-
-const defaultIconStyle: ViewStyle = {
-  width: 20,
-  height: 20,
-  marginRight: 5,
-  marginLeft: 5,
 };
 
 export default Button;
