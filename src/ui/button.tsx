@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   buttonStyle,
   leftIcon,
   rightIcon,
-  variant,
+  variant = 'outlined',
   color = '#000',
   onPress,
   ...rest

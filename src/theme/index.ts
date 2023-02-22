@@ -11,8 +11,10 @@ import {
   textAlignMap,
   textTransformMap,
 } from './font';
-import { gapMap, marginMap, paddingMap } from './spacing';
-import { borderRadiusMap } from './radius';
+import {gapMap, marginMap, paddingMap} from './spacing';
+import {borderRadiusMap} from './radius';
+import {borderColorMap, borderStyleMap, borderWidhtMap} from './border';
+import {backgroundColorMap} from './bg-color';
 
 export const themeMap = new Map();
 const maps = [
@@ -28,7 +30,11 @@ const maps = [
   fontWeightMap,
   textAlignMap,
   textTransformMap,
+  borderWidhtMap,
+  borderColorMap,
+  borderStyleMap,
   borderRadiusMap,
+  backgroundColorMap,
 ];
 
 for (const map of maps) {
