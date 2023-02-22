@@ -1,5 +1,6 @@
 import React from 'react';
 import {Pressable, PressableProps, ViewStyle} from 'react-native';
+import {theme} from '../theme';
 
 interface ButtonProps extends PressableProps {
   children: React.ReactNode;
@@ -26,7 +27,6 @@ const Button: React.FC<ButtonProps> = ({
     switch (variant) {
       case 'text':
         return {
-          ...defaultButtonStyle,
           ...buttonStyle,
         };
       case 'contained':
@@ -34,7 +34,6 @@ const Button: React.FC<ButtonProps> = ({
           backgroundColor: color,
           borderRadius: 10,
           padding: 10,
-          ...defaultButtonStyle,
           ...buttonStyle,
         };
       case 'outlined':
@@ -43,12 +42,10 @@ const Button: React.FC<ButtonProps> = ({
           borderColor: color,
           borderRadius: 10,
           padding: 10,
-          ...defaultButtonStyle,
           ...buttonStyle,
         };
       default:
         return {
-          ...defaultButtonStyle,
           ...buttonStyle,
         };
     }
@@ -66,19 +63,17 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <Pressable
       onPress={onPress}
-      style={({pressed}) => [getButtonStyle(), getPressableStyle(pressed)]}
+      style={({pressed}) => [
+        theme('flex-row', 'justify-center', 'align-center'),
+        getButtonStyle(),
+        getPressableStyle(pressed),
+      ]}
       {...rest}>
       {leftIcon && {leftIcon}}
       {children}
       {rightIcon && {rightIcon}}
     </Pressable>
   );
-};
-
-const defaultButtonStyle: ViewStyle = {
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'row',
 };
 
 export default Button;

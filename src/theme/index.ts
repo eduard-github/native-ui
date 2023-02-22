@@ -1,8 +1,31 @@
-import {fontSizeMap, fontWeightMap} from './font';
+import {
+  flexDirectionMap,
+  flexWrapMap,
+  justifyContentMap,
+  alignItemsMap,
+  flexMap,
+} from './flex';
+import {
+  fontSizeMap,
+  fontWeightMap,
+  textAlignMap,
+  textTransformMap,
+} from './font';
 import {gapMap} from './gap';
 
 export const themeMap = new Map();
-const maps = [fontSizeMap, fontWeightMap, gapMap];
+const maps = [
+  flexDirectionMap,
+  flexWrapMap,
+  justifyContentMap,
+  alignItemsMap,
+  flexMap,
+  fontSizeMap,
+  fontWeightMap,
+  textAlignMap,
+  textTransformMap,
+  gapMap,
+];
 
 for (const map of maps) {
   for (const [key, value] of map) {

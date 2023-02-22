@@ -1,19 +1,32 @@
 export const fontSizeMap = new Map([
-  ['xs', {fontSize: 12}],
-  ['sm', {fontSize: 14}],
-  ['md', {fontSize: 16}],
-  ['lg', {fontSize: 20}],
-  ['xl', {fontSize: 24}],
-  ['xxl', {fontSize: 32}],
+  ['text-xs', {fontSize: 12}],
+  ['text-sm', {fontSize: 14}],
+  ['text-md', {fontSize: 16}],
+  ['text-lg', {fontSize: 20}],
+  ['text-xl', {fontSize: 24}],
+  ['text-xxl', {fontSize: 32}],
 ]);
 
 export const fontWeightMap = new Map([
-  ['thin', {fontWeigth: '100'}],
-  ['extralight', {fontWeigth: '200'}],
-  ['light', {fontWeigth: '300'}],
-  ['regular', {fontWeigth: '400'}],
-  ['medium', {fontWeigth: '500'}],
-  ['semibold', {fontWeigth: '600'}],
-  ['bold', {fontWeigth: '700'}],
-  ['extrabold', {fontWeigth: '800'}],
+  ['font-thin', {fontWeight: '100'}],
+  ['font-extralight', {fontWeight: '200'}],
+  ['font-light', {fontWeight: '300'}],
+  ['font-normal', {fontWeight: '400'}],
+  ['font-medium', {fontWeight: '500'}],
+  ['font-semibold', {fontWeight: '600'}],
+  ['font-bold', {fontWeight: '700'}],
+  ['font-extrabold', {fontWeight: '800'}],
+]);
+
+export const textAlignMap = new Map([
+  ['text-left', {textAlign: 'left'}],
+  ['text-center', {textAlign: 'center'}],
+  ['text-right', {textAlign: 'right'}],
+]);
+
+export const textTransformMap = new Map([
+  ['normal-case', {textTransform: 'none'}],
+  ['uppercase', {textTransform: 'uppercase'}],
+  ['lowercase', {textTransform: 'lowercase'}],
+  ['capitalize', {textTransform: 'capitalize'}],
 ]);

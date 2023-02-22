@@ -1,17 +1,15 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import Button from './ui/button';
-import OTPInput from './ui/otp-input';
+import {theme} from './theme';
 import Typography from './ui/typography';
+import Button from './ui/button';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <Typography size="xl" weight="extrabold" transform="uppercase">
-        App
-      </Typography>
-      <Button variant="outlined" color="blue">
-        <Typography color="blue">Application Button</Typography>
+    <SafeAreaView style={[styles.container, theme('flex-1', 'gap-3')]}>
+      <Typography style={theme('text-lg', 'font-bold')}>App</Typography>
+      <Button variant="outlined">
+        <Typography>Application Button</Typography>
       </Button>
     </SafeAreaView>
   );
@@ -19,8 +17,7 @@ function App(): JSX.Element {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: 'aqua',
   },
 });
 
