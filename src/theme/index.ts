@@ -11,10 +11,14 @@ import {
   textAlignMap,
   textTransformMap,
 } from './font';
-import {gapMap} from './gap';
+import { gapMap, marginMap, paddingMap } from './spacing';
+import { borderRadiusMap } from './radius';
 
 export const themeMap = new Map();
 const maps = [
+  paddingMap,
+  marginMap,
+  gapMap,
   flexDirectionMap,
   flexWrapMap,
   justifyContentMap,
@@ -24,7 +28,7 @@ const maps = [
   fontWeightMap,
   textAlignMap,
   textTransformMap,
-  gapMap,
+  borderRadiusMap,
 ];
 
 for (const map of maps) {
