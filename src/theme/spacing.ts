@@ -1,4 +1,7 @@
-export const paddingMap = new Map([
+export const paddingMap = new Map<
+  string,
+  {padding?: number} | {paddingHorizontal?: number} | {paddingVertical?: number}
+>([
   ['p-0', {padding: 0}],
   ['p-x-0', {paddingHorizontal: 0}],
   ['p-y-0', {paddingVertical: 0}],
@@ -43,7 +46,10 @@ export const paddingMap = new Map([
   ['p-y-8', {paddingVertical: 32}],
 ]);
 
-export const marginMap = new Map([
+export const marginMap = new Map<
+  string,
+  {margin?: number} | {marginHorizontal?: number} | {marginVertical?: number}
+>([
   ['m-0', {margin: 0}],
   ['m-x-0', {marginHorizontal: 0}],
   ['m-y-0', {marginVertical: 0}],
@@ -88,7 +94,10 @@ export const marginMap = new Map([
   ['m-y-8', {marginVertical: 32}],
 ]);
 
-export const gapMap = new Map([
+export const gapMap = new Map<
+  string,
+  {gap?: number} | {columnGap?: number} | {rowGap?: number}
+>([
   ['gap-0', {gap: 0}],
   ['gap-x-0', {columnGap: 0}],
   ['gap-y-0', {rowGap: 0}],

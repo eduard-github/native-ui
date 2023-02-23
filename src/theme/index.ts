@@ -44,10 +44,13 @@ for (const map of maps) {
 }
 
 export const theme = (...classes: any[]) => {
-  let styles = [];
-  for (const name of classes) {
-    styles.push(themeMap.get(name));
-  }
-  console.log('THEME', styles);
-  return styles;
+  const combinedProperties = classes.reduce((theme, current) => {
+    if (typeof current === 'string') {
+      return {...theme, ...themeMap.get(current)};
+    } else {
+      return {...theme};
+    }
+  }, {});
+  console.log('THEME', combinedProperties);
+  return combinedProperties;
 };

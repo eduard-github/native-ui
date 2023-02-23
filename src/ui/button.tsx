@@ -18,8 +18,8 @@ const Button: React.FC<ButtonProps> = ({
   buttonStyle,
   leftIcon,
   rightIcon,
-  variant = 'outlined',
-  color = '#000',
+  variant = 'contained',
+  color = '#ccc',
   onPress,
   ...rest
 }: ButtonProps) => {
@@ -32,16 +32,12 @@ const Button: React.FC<ButtonProps> = ({
       case 'contained':
         return {
           backgroundColor: color,
-          borderRadius: 10,
-          padding: 10,
+          ...theme('p-2.5', 'bg-current', 'rounded-xxl'),
           ...buttonStyle,
         };
       case 'outlined':
         return {
-          borderWidth: 1,
-          borderColor: color,
-          borderRadius: 10,
-          padding: 10,
+          ...theme('p-2.5', 'border-1', 'border-black', 'rounded-xxl'),
           ...buttonStyle,
         };
       default:

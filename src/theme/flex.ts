@@ -1,17 +1,17 @@
-export const flexDirectionMap = new Map([
+export const flexDirectionMap = new Map<string, {flexDirection: string}>([
   ['flex-row', {flexDirection: 'row'}],
   ['flex-row-reverse', {flexDirection: 'row-reverse'}],
   ['flex-column', {flexDirection: 'column'}],
   ['flex-column-reverse', {flexDirection: 'column-reverse'}],
 ]);
 
-export const flexWrapMap = new Map([
+export const flexWrapMap = new Map<string, {flexWrap: string}>([
   ['flex-nowrap', {flexWrap: 'nowrap'}],
   ['flex-wrap', {flexWrap: 'wrap'}],
   ['flex-wrap-reverse', {flexWrap: 'wrap-reverse'}],
 ]);
 
-export const justifyContentMap = new Map([
+export const justifyContentMap = new Map<string, {justifyContent: string}>([
   ['justify-start', {justifyContent: 'flex-start'}],
   ['justify-end', {justifyContent: 'flex-end'}],
   ['justify-center', {justifyContent: 'center'}],
@@ -19,7 +19,7 @@ export const justifyContentMap = new Map([
   ['justify-around', {justifyContent: 'space-around'}],
 ]);
 
-export const alignItemsMap = new Map([
+export const alignItemsMap = new Map<string, {alignItems: string}>([
   ['align-start', {alignItems: 'flex-start'}],
   ['align-end', {alignItems: 'flex-end'}],
   ['align-center', {alignItems: 'center'}],

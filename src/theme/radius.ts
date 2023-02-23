@@ -1,4 +1,4 @@
-export const borderRadiusMap = new Map([
+export const borderRadiusMap = new Map<string, {borderRadius: number}>([
   ['rounded-none', {borderRadius: 0}],
   ['rounded-xs', {borderRadius: 1}],
   ['rounded-sm', {borderRadius: 2}],

@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import {theme} from './theme';
 import Typography from './ui/typography';
 import Button from './ui/button';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={[styles.container, theme('flex-1', 'gap-3')]}>
+    <SafeAreaView style={theme('flex-1', 'gap-2')}>
       <Typography style={theme('text-lg', 'font-bold')}>App</Typography>
       <Button>
         <Typography>Application Button</Typography>
@@ -14,11 +14,5 @@ function App(): JSX.Element {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'aqua',
-  },
-});
 
 export default App;
