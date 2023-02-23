@@ -8,7 +8,7 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={theme('flex-1', 'gap-2')}>
       <Typography style={theme('text-lg', 'font-bold')}>App</Typography>
-      <Button>
+      <Button variant='outlined' style={theme('border-2')}>
         <Typography>Application Button</Typography>
       </Button>
     </SafeAreaView>

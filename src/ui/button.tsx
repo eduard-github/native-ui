@@ -5,7 +5,7 @@ import {theme} from '../theme';
 interface ButtonProps extends PressableProps {
   children: React.ReactNode;
   color?: string;
-  buttonStyle?: ViewStyle;
+  style?: ViewStyle;
   leftIcon?: any;
   rightIcon?: any;
   variant?: 'contained' | 'outlined' | 'text';
@@ -15,7 +15,7 @@ interface ButtonProps extends PressableProps {
 
 const Button: React.FC<ButtonProps> = ({
   children,
-  buttonStyle,
+  style,
   leftIcon,
   rightIcon,
   variant = 'contained',
@@ -23,27 +23,16 @@ const Button: React.FC<ButtonProps> = ({
   onPress,
   ...rest
 }: ButtonProps) => {
-  const getButtonStyle = (): ViewStyle => {
-    switch (variant) {
-      case 'text':
-        return {
-          ...buttonStyle,
-        };
-      case 'contained':
-        return {
-          backgroundColor: color,
-          ...theme('p-2.5', 'bg-current', 'rounded-xxl'),
-          ...buttonStyle,
-        };
-      case 'outlined':
-        return {
-          ...theme('p-2.5', 'border-1', 'border-black', 'rounded-xxl'),
-          ...buttonStyle,
-        };
-      default:
-        return {
-          ...buttonStyle,
-        };
+  const getButtonVariantStyle = (): ViewStyle | any => {
+    if (variant === 'contained') {
+      return {
+        ...theme('p-2.5', 'bg-current', 'rounded-xxl'),
+      };
+    }
+    if (variant === 'outlined') {
+      return {
+        ...theme('p-2.5', 'border-1', 'border-black', 'rounded-xxl'),
+      };
     }
   };
 
@@ -61,8 +50,9 @@ const Button: React.FC<ButtonProps> = ({
       onPress={onPress}
       style={({pressed}) => [
         theme('flex-row', 'justify-center', 'align-center'),
-        getButtonStyle(),
+        getButtonVariantStyle(),
         getPressableStyle(pressed),
+        style,
       ]}
       {...rest}>
       {leftIcon && {leftIcon}}
