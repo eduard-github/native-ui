@@ -10,6 +10,7 @@ type TypographyProps = TextProps & {
 const Typography: React.FC<TypographyProps> = ({children, style, ...rest}) => {
   return (
     <Text
+      // adjustsFontSizeToFit
       style={[theme('text-md', 'font-normal', 'text-left'), style]}
       {...rest}>
       {children}

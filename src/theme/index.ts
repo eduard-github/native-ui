@@ -51,6 +51,6 @@ export const theme = (...classes: any[]) => {
       return {...theme};
     }
   }, {});
-  console.log('THEME', combinedProperties);
+  // console.log('THEME', combinedProperties);
   return combinedProperties;
 };

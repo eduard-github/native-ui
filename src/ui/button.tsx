@@ -48,8 +48,6 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <Pressable
       onPress={onPress}
-      // adjustsFontSizeToFit
-      // numberOfLines
       style={({pressed}) => [
         theme('flex-row', 'justify-center', 'align-center'),
         getButtonVariantStyle(),
