@@ -7,6 +7,7 @@ import {
   Text,
 } from 'react-native';
 import {Button} from './components/button';
+import {Input} from './components/input';
 import {Typography} from './components/typography';
 import {theme} from './theme';
 
@@ -38,6 +39,7 @@ function App(): JSX.Element {
       <Button>
         <Typography>Application Button</Typography>
       </Button>
+      <Input label="Name" />
     </SafeAreaView>
   );
 }

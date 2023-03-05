@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {
   StyleSheet,
   Pressable,
@@ -31,22 +31,13 @@ export const Button: React.FC<PressableButtonProps> = ({
   onPress,
   ...rest
 }) => {
-  const styles = StyleSheet.create({
-    container: {
-      backgroundColor: variant === 'contained' ? color : 'transparent',
-      borderColor: variant === 'outlined' ? color : 'transparent',
-      borderWidth: variant === 'outlined' ? 1 : 0,
-      paddingVertical: 10,
-      paddingHorizontal: 10,
-      borderRadius: 5,
-    },
-  });
+  const styles = useMemo(
+    () => createStyles(variant, color, fullWidth),
+    [variant, color, fullWidth],
+  );
 
   const _style = ({pressed}: any) => [
     styles.container,
-    {
-      alignSelf: fullWidth ? 'auto' : 'flex-start',
-    },
     {
       opacity: pressed || disabled ? 0.7 : 1,
     },
@@ -67,3 +58,16 @@ export const Button: React.FC<PressableButtonProps> = ({
     </Pressable>
   );
 };
+
+const createStyles = (variant: string, color: string, fullWidth: boolean) =>
+  StyleSheet.create({
+    container: {
+      backgroundColor: variant === 'contained' ? color : 'transparent',
+      borderColor: variant === 'outlined' ? color : 'transparent',
+      borderWidth: variant === 'outlined' ? 1 : 0,
+      paddingVertical: 10,
+      paddingHorizontal: 10,
+      borderRadius: 5,
+      alignSelf: fullWidth ? 'auto' : 'flex-start',
+    },
+  });
