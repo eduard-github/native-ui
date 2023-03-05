@@ -1,12 +1,18 @@
 import React from 'react';
-import {StyleSheet, Pressable, PressableProps, ViewStyle} from 'react-native';
+import {
+  StyleSheet,
+  Pressable,
+  PressableProps,
+  ViewStyle,
+  StyleProp,
+} from 'react-native';
 
 type PressableButtonProps = PressableProps & {
   children?: React.ReactNode;
   variant?: 'contained' | 'outlined' | 'text';
   color?: string;
   fullWidth?: boolean;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
   startIcon?: string;
   endIcon?: string;
   disabled?: boolean;
@@ -48,7 +54,11 @@ export const Button: React.FC<PressableButtonProps> = ({
   ];
 
   return (
-    <Pressable onPress={onPress} disabled={disabled} style={_style} {...rest}>
+    <Pressable
+      onPress={onPress}
+      disabled={disabled}
+      style={_style as StyleProp<ViewStyle>}
+      {...rest}>
       <>
         {startIcon && {startIcon}}
         {children}
