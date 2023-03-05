@@ -7,8 +7,8 @@ import {
   Text,
 } from 'react-native';
 import {Button} from './components/button';
+import {Typography} from './components/typography';
 import {theme} from './theme';
-import Typography from './ui/typography';
 
 type Scale = number;
 type Mode = 'width' | 'height';
@@ -32,7 +32,9 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={theme('flex-1', 'gap-2')}>
       {/* <Text style={{fontSize: normalize(24)}}>Test</Text> */}
-      <Typography style={theme('text-lg', 'font-bold')}>App</Typography>
+      <Typography weight="bold" size={24}>
+        App
+      </Typography>
       <Button>
         <Typography>Application Button</Typography>
       </Button>

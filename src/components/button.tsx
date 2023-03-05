@@ -39,7 +39,6 @@ export const Button: React.FC<PressableButtonProps> = ({
       paddingVertical: 10,
       paddingHorizontal: 10,
       borderRadius: 5,
-      style,
     },
   });
 
@@ -51,6 +50,7 @@ export const Button: React.FC<PressableButtonProps> = ({
     {
       opacity: pressed || disabled ? 0.7 : 1,
     },
+    style,
   ];
 
   return (
