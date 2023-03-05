@@ -6,9 +6,9 @@ import {
   ScaledSize,
   Text,
 } from 'react-native';
+import {Button} from './components/button';
 import {theme} from './theme';
 import Typography from './ui/typography';
-import Button from './ui/button';
 
 type Scale = number;
 type Mode = 'width' | 'height';
@@ -33,9 +33,9 @@ function App(): JSX.Element {
     <SafeAreaView style={theme('flex-1', 'gap-2')}>
       {/* <Text style={{fontSize: normalize(24)}}>Test</Text> */}
       <Typography style={theme('text-lg', 'font-bold')}>App</Typography>
-      {/* <Button variant="outlined" style={theme('border-2')}> */}
-      {/*   <Typography>Application Button</Typography> */}
-      {/* </Button> */}
+      <Button>
+        <Typography>Application Button</Typography>
+      </Button>
     </SafeAreaView>
   );
 }
