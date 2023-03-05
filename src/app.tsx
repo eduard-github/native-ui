@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {Button} from './components/button';
 import {Input} from './components/input';
+import {OTPInput} from './components/input-otp';
 import {Typography} from './components/typography';
 import {theme} from './theme';
 
@@ -40,6 +41,7 @@ function App(): JSX.Element {
         <Typography>Application Button</Typography>
       </Button>
       <Input label="Name" />
+      <OTPInput length={5} />
     </SafeAreaView>
   );
 }
